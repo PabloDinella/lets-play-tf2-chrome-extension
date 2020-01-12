@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Let's play TF2",
+  "author": "Pablo R. Dinella",
+  "version": "0.1.0",
+  "description": "Veja em tempo real quem está online nos servidores do Aww Yeah no Team Fortress 2.",
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+    "browser_action": {
+    "default_icon": "19.png",
+    "default_title": "Let's play TF2",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "clipboardWrite"
+  ]
+}
