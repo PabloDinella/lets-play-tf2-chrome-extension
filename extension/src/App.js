@@ -7,15 +7,19 @@ function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    Axios.get("http://localhost:3001/").then(({ data }) => {
-      setData(data);
-    });
+    Axios.get(process.env.REACT_APP_API || "http://localhost:3001/").then(
+      ({ data }) => {
+        setData(data);
+      }
+    );
   }, []);
 
   console.log(data);
 
   return (
     <div className="App">
+      {data === null && <p>Carregando...</p>}
+
       {data && data.error && <p>Sem informações sobre os servidores :(</p>}
 
       {data &&
