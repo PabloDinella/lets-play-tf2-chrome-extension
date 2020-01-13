@@ -9,5 +9,30 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "engines": {
+    "node": "13"
+  },
+  "name": "lets-play-tf2-server",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloDinella/lets-play-tf2-chrome-extension.git"
+  },
+  "keywords": [
+    "team",
+    "fortress",
+    "2",
+    "chrome",
+    "extension",
+    "gamedig"
+  ],
+  "author": "Pablo R. Dinella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PabloDinella/lets-play-tf2-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/PabloDinella/lets-play-tf2-chrome-extension#readme",
+  "description": ""
 }
