@@ -7,14 +7,8 @@ function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
-    Axios.get(process.env.REACT_APP_API || "http://localhost:3001/").then(
-      ({ data }) => {
-        setData(data);
-      }
-    );
+    setData(JSON.parse(localStorage.getItem("tf2")));
   }, []);
-
-  console.log(data);
 
   return (
     <div className="App">
