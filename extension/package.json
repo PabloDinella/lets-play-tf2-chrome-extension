@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "REACT_APP_API=https://lets-play-tf2.herokuapp.com/ react-scripts start",
     "build": "yarn build:app && yarn build:bg",
     "build:app": "INLINE_RUNTIME_CHUNK=false REACT_APP_API=https://lets-play-tf2.herokuapp.com/ react-scripts build",
     "build:bg": "REACT_APP_API=https://lets-play-tf2.herokuapp.com/ webpack --mode production --config background.webpack.config.js ./src/background.js --output ./build/background.js",
