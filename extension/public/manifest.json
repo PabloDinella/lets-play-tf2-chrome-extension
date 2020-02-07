@@ -19,5 +19,6 @@
 
     "persistent": true
   },
-  "permissions": ["clipboardWrite", "alarms"]
+  "permissions": ["clipboardWrite", "alarms"],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com/ https://www.google-analytics.com/; object-src 'self'"
 }
