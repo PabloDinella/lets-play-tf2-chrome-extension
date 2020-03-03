@@ -1,5 +1,7 @@
 import Axios from "axios";
 
+chrome.browserAction.setBadgeBackgroundColor({ color: "#b05326" });
+
 chrome.alarms.create("refresh", { periodInMinutes: 1 });
 chrome.alarms.onAlarm.addListener(alarm => {
   fetchInfo();
@@ -21,7 +23,7 @@ function fetchInfo() {
     })
     .catch(error => {
       console.error(error);
-      chrome.browserAction.setBadgeText({ text: ":(" });
+      chrome.browserAction.setBadgeText({ text: "?" });
     });
 }
 
