@@ -3,6 +3,6 @@ Browser extension that shows who's online on Aww Yeaa servers (Team Fortress 2 g
 
 Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/lets-play-tf2/
 
-Chrome extension: _soon_
+Chrome extension: https://chrome.google.com/webstore/detail/lets-play-tf2/encnhjnikcfaidjabljiojiifmjkjbph/
 
 ![screenshot](https://i.imgur.com/e1VWdUo.png)
