@@ -11,6 +11,7 @@ function updateInfo(info) {
   localStorage.setItem("tf2", JSON.stringify(info));
   chrome.browserAction.setBadgeText({
     text: info
+      .filter(({ error }) => !error)
       .reduce((totalPlayers, item) => totalPlayers + item.players.length, 0)
       .toString()
   });
