@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const Sentry = require('@sentry/node');
+Sentry.init({ dsn: `https://${process.env.sentryKey}@sentry.io/${process.env.sentryProject}` });
+
 app.use(
   cors({
     origin: "*"

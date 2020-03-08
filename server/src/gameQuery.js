@@ -1,4 +1,5 @@
 const Gamedig = require("gamedig");
+const Sentry = require("@sentry/node");
 
 const SERVERS = [
   {
@@ -31,9 +32,10 @@ module.exports = {
         })
       );
 
-      console.log('requested')
+      Sentry.captureMessage("Requested succesfully");
       return state;
     } catch (error) {
+      Sentry.captureException(error);
       return {
         error: "Couldn't get info :(",
         originalError: error.message
