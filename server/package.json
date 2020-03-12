@@ -16,7 +16,7 @@
     "node": "13"
   },
   "name": "lets-play-tf2-server",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "src/index.js",
   "repository": {
     "type": "git",

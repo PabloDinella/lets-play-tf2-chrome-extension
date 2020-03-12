@@ -3,16 +3,34 @@ const Sentry = require("@sentry/node");
 
 const SERVERS = [
   {
-    ip: "200.98.149.240", // principal
+    ip: "principal.awyeagames.website", // principal
+    port: 27015,
     color: "red"
   },
   {
-    ip: "200.98.164.167", // mvm
-    color: "#007eff"
+    ip: "fast.awyeagames.website", // mvm
+    port: 27016,
+    color: "yellow"
   },
   {
-    ip: "200.98.167.40", // evento
+    ip: "mvm.awyeagames.website", // evento
+    port: 27015,
     color: "green"
+  },
+  {
+    ip: "mvm.awyeagames.website",
+    port: 27016,
+    color: "limegreen"
+  },
+  {
+    ip: "arena.awyeagames.website",
+    port: 27015,
+    color: "indigo"
+  },
+  {
+    ip: "arena.awyeagames.website",
+    port: 27016,
+    color: "purple"
   }
 ];
 
@@ -20,15 +38,25 @@ module.exports = {
   async query() {
     try {
       const state = await Promise.all(
-        SERVERS.map(async ({ ip, ...rest }) => {
-          const serverInfo = await Gamedig.query({
-            type: "tf2",
-            host: ip
-          });
-          return {
-            ...serverInfo,
-            ...rest
-          };
+        SERVERS.map(async ({ ip, port, ...rest }, index) => {
+          try {
+            const serverInfo = await Gamedig.query({
+              type: "tf2",
+              host: ip,
+              port
+            });
+            if (index === 1) throw "Oops";
+            return {
+              ...serverInfo,
+              ...rest
+            };
+          } catch (error) {
+            Sentry.captureException(error);
+            return {
+              error: `Não pôde obter informações de ${ip}:${port}`,
+              ...rest
+            };
+          }
         })
       );
 
@@ -37,8 +65,7 @@ module.exports = {
     } catch (error) {
       Sentry.captureException(error);
       return {
-        error: "Couldn't get info :(",
-        originalError: error.message
+        error: "Não pôde obter informações dos servidores"
       };
     }
   }
