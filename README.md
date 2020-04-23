@@ -1,5 +1,5 @@
 # lets-play-tf2-extension
-Browser extension that shows who's online on Aww Yeaa servers (Team Fortress 2 game)
+Browser extension that shows who's online on [Aww Yeaa](https://steamcommunity.com/groups/awyea) servers (Team Fortress 2 game)
 
 Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/lets-play-tf2/
 
