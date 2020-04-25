@@ -9,7 +9,9 @@ export default ({ serverInfo }) => (
           window._gaq.push(["_trackEvent", "copy ip", serverInfo.name]);
         }}
       >
-        connect {serverInfo.connect}
+        <a href={`steam://connect/${serverInfo.connect}`}>
+          connect {serverInfo.connect}
+        </a>
       </p>
       <p>
         <strong>mapa: </strong>

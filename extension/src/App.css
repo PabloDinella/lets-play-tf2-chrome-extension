@@ -17,6 +17,10 @@
   margin-top: 0;
 }
 
+.server header a {
+  color: white;
+}
+
 header {
   margin-bottom: 10px;
   white-space: nowrap;
