@@ -8,6 +8,21 @@ const SERVERS = [
     color: "red"
   },
   {
+    ip: "principal2.awyeagames.website",
+    port: 27015,
+    color: "orange"
+  },
+  {
+    ip: "euro.awyeagames.website",
+    port: 27015,
+    color: "#B95F89"
+  },
+  {
+    ip: "balance.awyeagames.website",
+    port: 27016,
+    color: "#D5E2BC"
+  },
+  {
     ip: "fast.awyeagames.website",
     port: 27016,
     color: "yellow"
