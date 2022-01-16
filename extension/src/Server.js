@@ -3,7 +3,7 @@ import React from "react";
 export default ({ serverInfo }) => (
   <>
     <header>
-      <h2>{serverInfo.name}</h2>
+      <h2 title={serverInfo.name}>{serverInfo.name}</h2>
       <p
         onCopy={() => {
           window._gaq.push(["_trackEvent", "copy ip", serverInfo.name]);
@@ -35,6 +35,7 @@ export default ({ serverInfo }) => (
         </thead>
         <tbody>
           {serverInfo.players
+            .map((player) => ({ ...player, ...player.raw }))
             .sort(({ score: scoreA }, { score: scoreB }) => scoreB - scoreA)
             .map(({ name, score, time }) => (
               <tr key={name + time}>
