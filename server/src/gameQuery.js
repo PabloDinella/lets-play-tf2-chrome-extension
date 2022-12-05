@@ -159,6 +159,8 @@ module.exports = {
                   return { ...serverInfo, ...rest };
                 } catch (error) {
                   Sentry.captureException(error);
+                  console.log("error while fetching server data");
+                  console.log(error);
                   return {
                     error: `Não pôde obter informações de ${ip}:${port}`,
                     ...rest,
