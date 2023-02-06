@@ -6,5 +6,6 @@ const { queryV2 } = require("./gameQuery");
 
 exports.serversInfo = functions.https.onRequest(async (request, response) => {
   const data = await queryV2();
+  response.set('Access-Control-Allow-Origin', '*');
   response.send(data);
 });
