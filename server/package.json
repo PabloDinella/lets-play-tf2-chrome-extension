@@ -1,42 +1,26 @@
 {
-  "dependencies": {
-    "@sentry/node": "5.13.0",
-    "cors": "^2.8.5",
-    "esbuild": "0.17.5",
-    "express": "^4.17.1",
-    "gamedig": "^3.0.7",
-    "npm-to-yarn": "^1.2.1"
-  },
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
   "engines": {
-    "node": "18 || 16"
+    "node": "16"
   },
-  "name": "lets-play-tf2-server",
-  "version": "0.3.0",
-  "main": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PabloDinella/lets-play-tf2-chrome-extension.git"
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.4.0",
+    "@sentry/node": "^7.36.0",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "gamedig": "^4.0.6"
   },
-  "keywords": [
-    "team",
-    "fortress",
-    "2",
-    "chrome",
-    "extension",
-    "gamedig"
-  ],
-  "author": "Pablo R. Dinella",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PabloDinella/lets-play-tf2-chrome-extension/issues"
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
   },
-  "homepage": "https://github.com/PabloDinella/lets-play-tf2-chrome-extension#readme",
-  "description": ""
+  "private": true
 }
